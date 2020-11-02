@@ -1,0 +1,10 @@
+let fire = 0
+basic.forever(function () {
+    fire = pins.analogReadPin(AnalogPin.P0)
+    if (fire < 100) {
+        pins.digitalWritePin(DigitalPin.P1, 1)
+        basic.pause(1000)
+    } else {
+        pins.digitalWritePin(DigitalPin.P1, 0)
+    }
+})
